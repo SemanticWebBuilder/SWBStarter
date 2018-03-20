@@ -1,2 +1,2 @@
 # SWBStarter
-Repositorio para iniciar desarrollos con la plataforma SemanticWebBuilder y el paradigma de Desarrollo Dirigido por Ontologías
+Repositorio para iniciar desarrollo de componentes con la plataforma SemanticWebBuilder
