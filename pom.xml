@@ -12,7 +12,7 @@
     <url>http://www.semanticwebbuilder.org.mx/</url>
 
     <scm>
-        <url>scm:git:https://github.com/SemanticWebBuilder/SWBBase</url>
+        <url>scm:git:https://github.com/SemanticWebBuilder/SWBStarter</url>
     </scm>
 
     <properties>
