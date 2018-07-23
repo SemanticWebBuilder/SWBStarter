@@ -25,6 +25,8 @@ hs_err_pid*
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
+*.iml
+.idea/
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
@@ -73,5 +75,6 @@ crashlytics-build.properties
 fabric.properties
 
 .classpath
-target/
+/**/target/
 build/
+.DS_Store
