@@ -8,12 +8,14 @@ import org.semanticwb.codegen.CodeGeneratorException;
 
 import java.io.File;
 
+/**
+ * Code generation class for Starter project.
+ */
 public class CodeGeneratorComponents {
-    private static final  String swbOnt = "https://raw.githubusercontent.com/SemanticWebBuilder/SWB/master/src/main/webapp/WEB-INF/owl/swb.owl";
-    private static final  String starterOnt = "WebApp/src/main/webapp/WEB-INF/owl/ext/starter.owl";
-    private static final  String prefix = "starter";
-    private static final  String sourceCodebase = "Components/src/main/java";
-
+    private static final  String SWB_ONT = "https://raw.githubusercontent.com/SemanticWebBuilder/SWB/master/src/main/webapp/WEB-INF/owl/swb.owl";
+    private static final  String STARTER_ONT = "WebApp/src/main/webapp/WEB-INF/owl/ext/starter.owl";
+    private static final  String ONT_PREFIX = "starter";
+    private static final  String SOURCECODE_BASE = "Model/src/main/java";
     private static final Logger LOG = SWBUtils.getLogger(CodeGeneratorComponents.class);
 
     public static void main(String[] args) {
@@ -21,20 +23,18 @@ public class CodeGeneratorComponents {
     }
 
     public void codeGen(String[] args) {
-        LOG.info("org.semanticwb.starter Starting code generation for ontology " + starterOnt);
+        LOG.info("org.semanticwb.starter Starting code generation for ontology " + STARTER_ONT);
         SWBPlatform.createInstance();
-        File f = new File(starterOnt);
-        SWBPlatform.getSemanticMgr().addBaseOntology(swbOnt);
+        File f = new File(STARTER_ONT);
+        SWBPlatform.getSemanticMgr().addBaseOntology(SWB_ONT);
         SWBPlatform.getSemanticMgr().addBaseOntology(f.toURI().toString());
         SWBPlatform.getSemanticMgr().loadBaseVocabulary();
         SWBPlatform.getSemanticMgr().getOntology().rebind();
 
         try {
-            String path = getClass().getResource("/").getPath().replaceAll("%20", " ");
-            File dir = new File(sourceCodebase);
+            File dir = new File(SOURCECODE_BASE);
             CodeGenerator codeGeneration = new CodeGenerator();
-            codeGeneration.generateCode(prefix, false, dir);
-            LOG.info("org.semanticwb.starter Class generation complete");
+            codeGeneration.generateCode(ONT_PREFIX, false, dir);
             LOG.info("org.semanticwb.starter Class generation complete");
         } catch (CodeGeneratorException cge) {
             cge.printStackTrace();

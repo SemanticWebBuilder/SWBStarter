@@ -1,4 +1,4 @@
-package org.semanticwb.portal.resources;
+package org.semanticwb.starter.resources;
 
 import org.semanticwb.portal.api.GenericAdmResource;
 import org.semanticwb.portal.api.SWBActionResponse;
@@ -13,7 +13,7 @@ import java.io.IOException;
  * Hello world! resource using SemanticWebBuilder.
  * @author Hasdai Pacheco
  */
-public class SimpleResource extends GenericAdmResource  {
+public class StarterResource extends GenericAdmResource  {
 
     @Override
     public void processRequest(HttpServletRequest request, HttpServletResponse response, SWBParamRequest paramRequest) throws SWBResourceException, IOException {
