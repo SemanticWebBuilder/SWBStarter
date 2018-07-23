@@ -73,5 +73,6 @@ crashlytics-build.properties
 fabric.properties
 
 .classpath
-target/
+/**/target/
 build/
+.DS_Store

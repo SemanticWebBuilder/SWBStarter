@@ -1,57 +1,49 @@
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    
     <groupId>org.semanticwb</groupId>
     <artifactId>SWBStarter</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
+    <packaging>pom</packaging>
     <name>SWBStarter</name>
-    <description>SemanticWebBuilder resources starter project</description>
-    <url>http://www.semanticwebbuilder.org.mx/</url>
-
-    <scm>
-        <url>scm:git:https://github.com/SemanticWebBuilder/SWBStarter</url>
-    </scm>
-
+    
+    <modules>
+    	<module>Model</module>
+        <module>Components</module>
+        <module>WebApp</module>
+    </modules>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.semanticwb</groupId>
-            <artifactId>SWBBase</artifactId>
-            <version>LATEST</version>
-        </dependency>
-        <dependency>
-            <groupId>org.semanticwb</groupId>
-            <artifactId>SWBModel</artifactId>
-            <version>LATEST</version>
-        </dependency>
-        <dependency>
-            <groupId>org.semanticwb</groupId>
-            <artifactId>SWBPlatform</artifactId>
-            <version>LATEST</version>
-        </dependency>
-        <dependency>
-            <groupId>org.semanticwb</groupId>
-            <artifactId>SWBPortal</artifactId>
-            <version>LATEST</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>webapprunner</id>
+                        <phase>package</phase>
+                        <goals><goal>copy</goal></goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.github.jsimone</groupId>
+                                    <artifactId>webapp-runner</artifactId>
+                                    <version>8.5.23.0</version>
+                                    <destFileName>webapp-runner.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

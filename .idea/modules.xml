@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Components/Components.iml" filepath="$PROJECT_DIR$/Components/Components.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Model/Model.iml" filepath="$PROJECT_DIR$/Model/Model.iml" />
       <module fileurl="file://$PROJECT_DIR$/SWBStarter.iml" filepath="$PROJECT_DIR$/SWBStarter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebApp/WebApp.iml" filepath="$PROJECT_DIR$/WebApp/WebApp.iml" />
     </modules>
   </component>
 </project>
